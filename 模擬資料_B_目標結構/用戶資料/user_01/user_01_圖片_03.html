@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>車輛維修估價單</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #f4f4f4; padding: 20px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 800px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 1px solid #ccc; position: relative; }
+        .header { text-align: center; border-bottom: 2px solid #1e3a8a; padding-bottom: 15px; margin-bottom: 20px; }
+        .shop-name { font-size: 28px; font-weight: bold; color: #1e3a8a; margin-bottom: 5px; }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 15px; }
+        .info-table th, .info-table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        .info-table th { background-color: #f1f5f9; width: 100px; }
+        .parts-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: center; }
+        .parts-table th, .parts-table td { border: 1px solid #ccc; padding: 10px; }
+        .parts-table th { background-color: #1e3a8a; color: white; }
+        .item-name { text-align: left; }
+        .amount { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="shop-name">特斯拉原廠授權鈑噴中心</div>
+            <div style="font-size: 18px; color: #333; letter-spacing: 2px;">車輛維修估價單 (Quotation)</div>
+        </div>
+
+        <table class="info-table">
+            <tr><th>車主姓名</th><td>王柏融</td><th>車牌號碼</th><td>ABC-0199</td></tr>
+            <tr><th>車輛型號</th><td>Tesla Model 3 (2023)</td><th>進廠日期</th><td>2026/05/03</td></tr>
+        </table>
+
+        <table class="parts-table">
+            <tr>
+                <th style="width: 5%;">項次</th>
+                <th style="width: 40%;">維修/更換項目</th>
+                <th style="width: 15%;">零件費 (全新)</th>
+                <th style="width: 15%;">工資</th>
+                <th style="width: 10%;">烤漆費</th>
+                <th style="width: 15%;">小計</th>
+            </tr>
+            
+            <tr style="">
+                <td>1</td>
+                <td class="item-name">右後保險桿總成 (更換)</td>
+                <td class="amount">18,000</td>
+                <td class="amount">2,000</td>
+                <td class="amount">3,500</td>
+                <td class="amount">23,500</td>
+            </tr>
+            <tr><td colspan="5" style="text-align: right; font-weight: bold;">總計 (新台幣)</td><td class="amount" style="font-weight: bold;">23,500</td></tr>
+        </table>
+        
+        <div style="margin-top: 50px; text-align: right;">
+            廠長簽章：<span style="font-family: 'DFKai-SB', serif; font-size: 24px; border: 1px solid red; color: red; padding: 5px;">林廠長</span>
+        </div>
+    </div>
+</body>
+</html>

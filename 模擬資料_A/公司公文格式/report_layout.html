@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>理賠案件審核決行報告書</title>
+    <style>
+        body { font-family: "標楷體", "Microsoft JhengHei", serif; background-color: #f4f4f4; padding: 40px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 850px; min-height: 1200px; padding: 50px 60px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: #222; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 30px; }
+        .company-name { font-size: 32px; font-weight: bold; letter-spacing: 8px; margin-bottom: 10px; color: #1a365d; }
+        .doc-title { font-size: 24px; font-weight: bold; }
+        .metadata { display: flex; justify-content: space-between; font-size: 14px; margin-top: 15px; color: #555; }
+        .section-title { font-size: 18px; font-weight: bold; background-color: #e2e8f0; padding: 8px 12px; margin: 25px 0 15px 0; border-left: 5px solid #2b6cb0; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-family: "Microsoft JhengHei", sans-serif; font-size: 14px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background-color: #f8fafc; width: 25%; font-weight: bold; }
+        .amount { text-align: right; font-family: monospace; font-size: 15px; }
+        
+        /* 通用表格輔助類別供 AI 使用 */
+        .approved-header { background-color: #d1fae5; color: #065f46; }
+        .rejected-header { background-color: #fee2e2; color: #991b1b; }
+        .rejected-row { color: #e53e3e; background-color: #fff5f5; }
+        
+        /* 動態 CSS：AI 判斷拒賠時用紅色(#e53e3e)，核准用綠色(#2f855a)，部分核准用黃色(#d69e2e) */
+        .conclusion-box { border: 2px solid [CONCLUSION_COLOR_HEX]; padding: 20px; margin: 30px 0; background-color: [CONCLUSION_BG_HEX]; position: relative; }
+        .stamp-status { position: absolute; top: -20px; right: 40px; width: 150px; height: 60px; border: 4px solid [CONCLUSION_COLOR_HEX]; color: [CONCLUSION_COLOR_HEX]; font-size: 24px; font-weight: bold; display: flex; align-items: center; justify-content: center; transform: rotate(-15deg); opacity: 0.85; border-radius: 8px; letter-spacing: 2px;}
+        
+        .ai-warning { background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="company-name">AI-Works 產物保險股份有限公司</div>
+            <div class="doc-title">理賠案件審核決行報告書</div>
+            <div class="metadata">
+                <span>案號：[CLAIM_ID]</span>
+                <span>機密等級：內部機密</span>
+                <span>印表日期：[CURRENT_DATE]</span>
+            </div>
+        </div>
+
+        <div class="section-title">一、 基本資料與案由</div>
+        <table>
+            <tr><th>被保險人/車主</th><td>[INSURED_NAME]</td><th>保單號碼/車牌</th><td>[POLICY_OR_PLATE_NUMBER]</td></tr>
+            <tr><th>申請險種</th><td>[INSURANCE_TYPE]</td><th>保單其他資訊</th><td>[OTHER_INFO]</td></tr>
+            <tr><th>事故發生日期</th><td>[INCIDENT_DATE]</td><th>事故類型</th><td>[INCIDENT_TYPE]</td></tr>
+        </table>
+
+        <div class="section-title">二、 收受佐證文件清單</div>
+        <table>
+            <tr><th style="width: 15%;">文件編號</th><th style="width: 45%;">文件名稱</th><th style="width: 40%;">AI 辨識關鍵擷取內容</th></tr>
+            <!-- AI 動態填入文件清單，無數量限制 -->
+            [EVIDENCE_LIST_ROWS]
+        </table>
+
+        <div class="section-title">三、 AI 審核過程與理算明細</div>
+        <p><strong>適用條款：</strong>依據《[RELEVANT_POLICY_GUIDELINE_NAME]》審核。</p>
+
+        <!-- 
+        [SYSTEM PROMPT FOR AI]
+        請依據理賠情境動態生成以下的表格 HTML。
+        - 若有核准項目：請生成完整的 <table>，表頭使用 class="approved-header"，列出核准花費。
+        - 若有剔除項目：請生成完整的 <table>，表頭使用 class="rejected-header"，列出拒絕原因，拒絕項目請加上 class="rejected-row"。
+        - 若為「全案拒賠」，請*不要*生成核准項目的表格，以保持版面合理。
+        -->
+        [AI_GENERATED_REVIEW_TABLES_HTML]
+
+        <div class="conclusion-box">
+            <div class="stamp-status">[FINAL_STATUS_STAMP_TEXT]</div>
+            <div style="font-size: 20px; font-weight: bold; color: [CONCLUSION_COLOR_HEX]; margin-bottom: 10px; text-align: center;">四、 最終審核結論</div>
+            <table>
+                <!-- 
+                [SYSTEM PROMPT FOR AI]
+                請依照險種特性動態生成計算過程列。
+                例如車險要有「扣除折舊」、「扣除自負額」；旅遊險要有「除外品項剔除」等。 
+                -->
+                [FINAL_CALCULATION_TABLE_ROWS]
+                <tr><th style="background-color: #f7fafc;">最終核定給付總金額</th><td class="amount" style="font-size: 20px; font-weight: bold; color: [CONCLUSION_COLOR_HEX];">[FINAL_PAYOUT_AMOUNT]</td></tr>
+            </table>
+            
+            <div style="margin-top: 15px;">
+                <strong>決行理由說明：</strong>
+                <span style="color: [CONCLUSION_COLOR_HEX]; font-weight: bold; line-height: 1.5;">
+                    [FINAL_DECISION_REASONING_TEXT]
+                </span>
+            </div>
+        </div>
+
+        <div class="ai-warning">
+            <strong>⚠️ AI 防護網提示 (Human-in-the-loop 警示)</strong><br>
+            [AI_WARNING_AND_INSIGHT_TEXT]
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 60px;">
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px; font-weight: bold; color: blue;">Codex Agent</div>AI 初核</div>
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px;"></div>理賠專員確認</div>
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px;"></div>理賠部主管</div>
+        </div>
+    </div>
+</body>
+</html>

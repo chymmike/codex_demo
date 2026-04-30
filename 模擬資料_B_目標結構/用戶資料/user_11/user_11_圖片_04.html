@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>寵物登記證</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #f0fdfa; padding: 20px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 600px; padding: 30px; border: 4px solid #14b8a6; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); position: relative; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .title { font-size: 24px; font-weight: bold; color: #0f766e; border-bottom: 2px solid #14b8a6; padding-bottom: 10px; }
+        .info-table { width: 100%; border-collapse: collapse; font-size: 16px; margin-top: 20px; }
+        .info-table td { padding: 12px 10px; border-bottom: 1px solid #f0fdfa; }
+        .label { font-weight: bold; color: #0f766e; width: 120px; }
+        .chip-number { font-family: monospace; font-size: 20px; font-weight: bold; color: #0f766e; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="title">農業部寵物登記管理系統 - 寵物登記證</div>
+        </div>
+        
+        <table class="info-table">
+            <tr>
+                <td class="label">晶片號碼</td>
+                <td class="chip-number">9000123411</td>
+            </tr>
+            <tr>
+                <td class="label">寵物名字</td>
+                <td>胖球</td>
+            </tr>
+            <tr>
+                <td class="label">寵物品種</td>
+                <td>法國鬥牛犬 (French Bulldog)</td>
+            </tr>
+            <tr>
+                <td class="label">出生日期</td>
+                <td>2023-05-10</td>
+            </tr>
+            <tr>
+                <td class="label">飼主姓名</td>
+                <td>張小美</td>
+            </tr>
+            <tr>
+                <td class="label">登記日期</td>
+                <td>2023-07-20</td>
+            </tr>
+        </table>
+        
+        <div style="position: absolute; bottom: 20px; right: 20px; color: #99f6e4; font-size: 60px; font-weight: bold; opacity: 0.3; transform: rotate(-30deg);">
+            已登記
+        </div>
+    </div>
+</body>
+</html>

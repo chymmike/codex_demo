@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>動物醫院 - 醫療費用收據</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #f5f5f5; padding: 20px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 650px; padding: 40px; border: 2px solid #4b5563; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .header { text-align: center; border-bottom: 2px dashed #4b5563; padding-bottom: 15px; margin-bottom: 20px; }
+        .hospital-name { font-size: 24px; font-weight: bold; color: #1f2937; }
+        .info-table, .fee-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
+        .info-table td { padding: 5px 0; }
+        .fee-table th, .fee-table td { border: 1px solid #d1d5db; padding: 10px; text-align: left; }
+        .fee-table th { background-color: #f3f4f6; }
+        .amount { text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="hospital-name">毛寶貝動物醫院</div>
+            <div style="font-size: 18px; margin-top: 5px;">醫療費用收據</div>
+        </div>
+        
+        <table class="info-table">
+            <tr><td>病歷號碼：AP-90342</td><td>寵物名字：胖球</td></tr>
+            <tr><td>飼主姓名：張小美</td><td>收據日期：2026-08-14</td></tr>
+        </table>
+
+        <table class="fee-table">
+            <tr>
+                <th>診療項目</th>
+                <th>說明</th>
+                <th style="width: 25%;" class="amount">金額 (元)</th>
+            </tr>
+            <tr><td>掛號費</td><td>專科特約門診</td><td class="amount">350</td></tr>
+            <tr><td>術前血液檢查</td><td>生化與血球分析</td><td class="amount">2,500</td></tr>
+            <tr><td>全身氣體麻醉</td><td>手術麻醉費用</td><td class="amount">5,000</td></tr>
+            <tr>
+                <td>外科手術費</td>
+                <td>軟顎過長切除術 (短吻犬呼吸道症候群 (軟顎過長)治療)</td>
+                <td class="amount" style="font-weight: bold; color: #b91c1c;">28,000</td>
+            </tr>
+            <tr><td>術後消炎藥劑</td><td>7天份口服藥</td><td class="amount">1,200</td></tr>
+            <tr>
+                <th colspan="2" style="text-align: right;">費用總計</th>
+                <th class="amount" style="font-size: 16px; font-weight: bold; color: #b91c1c;">37,050</th>
+            </tr>
+        </table>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 40px; font-size: 14px;">
+            <div>毛寶貝動物醫院 (蓋章處)</div>
+            <div style="text-align: right;">經手人：陳小莉 獸醫師</div>
+        </div>
+    </div>
+</body>
+</html>

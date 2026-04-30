@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>動物醫院診斷與收據</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background-color: #e0e0e0; padding: 20px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 700px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
+        .shop-name { font-size: 24px; font-weight: bold; color: #d35400; }
+        .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .info-table th, .info-table td { border: 1px solid #aaa; padding: 8px; font-size: 14px; }
+        .info-table th { background-color: #fdf2e9; text-align: left; width: 100px; }
+        .stamp { border: 3px solid #d35400; color: #d35400; width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 20px auto; transform: rotate(15deg); }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="shop-name">毛寶貝動物醫院</div>
+            <div>診斷證明書 暨 醫療收據</div>
+        </div>
+        
+        <table class="info-table">
+            <tr><th>飼主姓名</th><td>王大同</td><th>日期</th><td>2026-08-20</td></tr>
+            <tr><th>寵物名稱</th><td>毛毛</td><th>寵物年齡</th><td>3歲</td></tr>
+            <tr><th>寵物品種</th><td style="color:#000; font-weight:bold;">貴賓犬 (Poodle)</td><th>晶片號碼</th><td>9000123417</td></tr>
+            <tr><th>診斷病名</th><td colspan="3" style="font-weight:bold;">誤食異物 (腸道阻塞)</td></tr>
+            <tr>
+                <th>醫囑說明</th>
+                <td colspan="3" style="height: 60px; vertical-align: top;">
+                    寵物「毛毛」誤食玩具導致嚴重嘔吐，經超音波確認異物卡在胃部，緊急安排內視鏡夾取異物。
+                </td>
+            </tr>
+        </table>
+
+        <div style="font-weight: bold; margin-bottom: 10px;">醫療費用明細</div>
+        <table class="info-table">
+            <tr><th>項目</th><th>金額 (NT$)</th></tr>
+            <tr><td>掛號與診察費</td><td style="text-align:right;">500</td></tr>
+            <tr><td>血液與影像檢查費</td><td style="text-align:right;">3,500</td></tr>
+            <tr><td>內視鏡異物夾取術</td><td style="text-align:right;">18,000</td></tr>
+            <tr><td>住院照護費 (2天)</td><td style="text-align:right;">3,000</td></tr>
+            <tr><td>口服藥品費 (7天)</td><td style="text-align:right;">800</td></tr>
+            <tr><th style="text-align:right;">總計</th><td style="text-align:right; font-weight:bold;">25,800</td></tr>
+        </table>
+        
+        <div class="stamp">費用結清<br>毛寶貝醫院</div>
+    </div>
+</body>
+</html>
