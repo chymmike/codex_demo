@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>理賠案件審核決行報告書</title>
+    <style>
+        body { font-family: "標楷體", "Microsoft JhengHei", serif; background-color: #f4f4f4; padding: 40px; display: flex; justify-content: center; }
+        .document { background-color: white; width: 850px; min-height: 1200px; padding: 50px 60px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); color: #222; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 30px; }
+        .company-name { font-size: 32px; font-weight: bold; letter-spacing: 8px; margin-bottom: 10px; color: #1a365d; }
+        .doc-title { font-size: 24px; font-weight: bold; }
+        .metadata { display: flex; justify-content: space-between; font-size: 14px; margin-top: 15px; color: #555; }
+        .section-title { font-size: 18px; font-weight: bold; background-color: #e2e8f0; padding: 8px 12px; margin: 25px 0 15px 0; border-left: 5px solid #2b6cb0; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-family: "Microsoft JhengHei", sans-serif; font-size: 14px; }
+        th, td { border: 1px solid #cbd5e1; padding: 10px; text-align: left; }
+        th { background-color: #f8fafc; width: 25%; font-weight: bold; }
+        .amount { text-align: right; font-family: monospace; font-size: 15px; }
+        .rejected-header { background-color: #fee2e2; color: #991b1b; }
+        .rejected-row { color: #e53e3e; background-color: #fff5f5; }
+        .conclusion-box { border: 2px solid #e53e3e; padding: 20px; margin: 30px 0; background-color: #fff5f5; position: relative; }
+        .stamp-status { position: absolute; top: -20px; right: 40px; width: 150px; height: 60px; border: 4px solid #e53e3e; color: #e53e3e; font-size: 24px; font-weight: bold; display: flex; align-items: center; justify-content: center; transform: rotate(-15deg); opacity: 0.85; border-radius: 8px; letter-spacing: 2px;}
+        .ai-warning { background-color: #fffbeb; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="company-name">AI-Works 產物保險股份有限公司</div>
+            <div class="doc-title">理賠案件審核決行報告書</div>
+            <div class="metadata">
+                <span>案號：PET-REQ-202608-044</span>
+                <span>機密等級：內部機密</span>
+                <span>印表日期：2026-05-03</span>
+            </div>
+        </div>
+        <div class="section-title">一、 基本資料與案由</div>
+        <table>
+            <tr><th>被保險人/車主</th><td>張小美</td><th>保單號碼/車牌</th><td>PET-202608-109 / 晶片 900012345678</td></tr>
+            <tr><th>申請險種</th><td>寵物綜合醫療險</td><th>保單其他資訊</th><td>承保寵物：胖球，法國鬥牛犬；醫療費用自負額 30%</td></tr>
+            <tr><th>事故發生日期</th><td>2026-08-14</td><th>事故類型</th><td>短吻犬呼吸道症候群相關手術</td></tr>
+        </table>
+        <div class="section-title">二、 收受佐證文件清單</div>
+        <table>
+            <tr><th style="width: 15%;">文件編號</th><th style="width: 45%;">文件名稱</th><th style="width: 40%;">AI 辨識關鍵擷取內容</th></tr>
+            <tr><td>01</td><td>診斷證明書暨醫療收據</td><td>法國鬥牛犬；診斷病名為短吻犬呼吸道症候群（軟顎過長）；總計 NT$ 22,800。</td></tr>
+            <tr><td>02</td><td>寵物綜合保險理賠申請書</td><td>申請手術費用；主述呼吸急促、打鼾嚴重，安排軟顎切除手術。</td></tr>
+            <tr><td>03</td><td>安平動物醫院醫療費用收據</td><td>軟顎過長切除術等費用總計 NT$ 37,050。</td></tr>
+            <tr><td>04</td><td>寵物登記證</td><td>晶片號碼 900012345678；品種為法國鬥牛犬。</td></tr>
+        </table>
+        <div class="section-title">三、 AI 審核過程與理算明細</div>
+        <p><strong>適用條款：</strong>依據《寵物綜合保險理賠作業準則》審核。</p>
+        <table>
+            <tr class="rejected-header"><th>拒賠依據</th><th>關鍵事實</th><th>審核說明</th></tr>
+            <tr class="rejected-row"><td>特定品種遺傳/先天性疾病全案拒賠</td><td>法國鬥牛犬，診斷短吻犬呼吸道症候群，治療包含軟顎切除術。</td><td>手冊明列法國鬥牛犬之短吻犬呼吸道症候群（如軟顎過長切除術、鼻孔狹窄擴張術）為全案拒賠。</td></tr>
+            <tr class="rejected-row"><td>預防性醫療剔除</td><td>診斷證明書暨醫療收據另列預防針注射 NT$ 500。</td><td>即使未全案拒賠，疫苗接種亦屬預防性醫療，應予剔除。</td></tr>
+        </table>
+        <div class="conclusion-box">
+            <div class="stamp-status">拒賠</div>
+            <div style="font-size: 20px; font-weight: bold; color: #e53e3e; margin-bottom: 10px; text-align: center;">四、 最終審核結論</div>
+            <table>
+                <tr><th>申請醫療費用</th><td class="amount">NT$ 37,050</td></tr>
+                <tr><th>除外責任扣除</th><td class="amount">- NT$ 37,050</td></tr>
+                <tr><th>可理賠醫療總額</th><td class="amount">NT$ 0</td></tr>
+                <tr><th>共保條款計算</th><td class="amount">不適用</td></tr>
+                <tr><th style="background-color: #f7fafc;">最終核定給付總金額</th><td class="amount" style="font-size: 20px; font-weight: bold; color: #e53e3e;">NT$ 0</td></tr>
+            </table>
+            <div style="margin-top: 15px;"><strong>決行理由說明：</strong><span style="color: #e53e3e; font-weight: bold; line-height: 1.5;">承保寵物為法國鬥牛犬，病名與手術內容均符合手冊所列短吻犬呼吸道症候群除外條款，依準則全案拒賠。</span></div>
+        </div>
+        <div class="ai-warning"><strong>AI 防護網提示 (Human-in-the-loop 警示)</strong><br>申請書載明就診醫院為安平動物醫院、診療日 2026-08-14；另有毛寶貝動物醫院文件日期 2026-08-20，文件來源與日期不一致，建議人工覆核真實收據與診斷書來源。</div>
+        <div style="display: flex; justify-content: space-between; margin-top: 60px;">
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px; font-weight: bold; color: blue;">Codex Agent</div>AI 初核</div>
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px;"></div>理賠專員確認</div>
+            <div style="width: 30%; text-align: center;"><div style="border-bottom: 1px solid #000; height: 30px;"></div>理賠部主管</div>
+        </div>
+    </div>
+</body>
+</html>
